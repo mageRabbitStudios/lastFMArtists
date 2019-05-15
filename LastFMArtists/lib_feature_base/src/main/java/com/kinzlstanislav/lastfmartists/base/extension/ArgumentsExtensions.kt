@@ -1,4 +1,4 @@
-package com.kinzlstanislav.lastfmartists.architecture.core.extension
+package com.kinzlstanislav.lastfmartists.base.extension
 
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment

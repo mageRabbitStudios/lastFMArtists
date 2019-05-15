@@ -11,10 +11,7 @@ import com.kinzlstanislav.lastfmartists.architecture.network.injection.NetworkMo
 import dagger.Module
 import dagger.Provides
 
-@Module(includes = [
-    AppScopeViewModelFactoriesModule::class,
-    NetworkModule::class
-])
+@Module(includes = [NetworkModule::class])
 class ApplicationModule {
 
     @Provides

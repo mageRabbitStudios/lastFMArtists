@@ -1,7 +1,6 @@
 package com.kinzlstanislav.lastfmartists.injection.bindings
 
 import com.kinzlstanislav.lastfmartists.architecture.core.dagger.scopes.PerActivity
-import com.kinzlstanislav.lastfmartists.injection.MainActivityModule
 import com.kinzlstanislav.lastfmartists.view.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -10,7 +9,7 @@ import dagger.android.ContributesAndroidInjector
 interface ActivityBindings {
 
     @PerActivity
-    @ContributesAndroidInjector(modules = [MainActivityModule::class])
+    @ContributesAndroidInjector
     fun bindMainActivity(): MainActivity
 
 }

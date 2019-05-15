@@ -1,4 +1,4 @@
-package com.kinzlstanislav.lastfmartists.architecture.core.extension
+package com.kinzlstanislav.lastfmartists.base.extension
 
 import android.view.MotionEvent
 import android.view.View
