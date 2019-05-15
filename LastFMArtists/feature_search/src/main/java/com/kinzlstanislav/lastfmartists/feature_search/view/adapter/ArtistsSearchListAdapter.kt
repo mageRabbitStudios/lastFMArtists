@@ -1,8 +1,8 @@
-package com.kinzlstanislav.feature_search.view.adapter
+package com.kinzlstanislav.lastfmartists.feature_search.view.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.kinzlstanislav.feature_search.R
+import com.kinzlstanislav.lastfmartists.feature_search.R
 import com.kinzlstanislav.lastfmartists.architecture.core.model.Artist
 import com.kinzlstanislav.lastfmartists.base.imageloading.GlideImageLoader
 import com.kinzlstanislav.lastfmartists.base.static.inflateViewForHolder

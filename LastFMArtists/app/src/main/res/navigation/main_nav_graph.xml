@@ -4,7 +4,22 @@
             android:id="@+id/main_nav_graph" app:startDestination="@id/fragmentSearch">
 
     <fragment android:id="@+id/fragmentSearch"
-              android:name="com.kinzlstanislav.feature_search.view.FragmentSearch"
+              android:name="com.kinzlstanislav.lastfmartists.feature_search.view.FragmentSearch"
               android:label="FragmentSearch"
-              tools:layout="@layout/fragment_search"/>
+              tools:layout="@layout/fragment_search">
+        <action
+                android:id="@+id/search_to_artist_detail"
+                app:enterAnim="@anim/fragment_slide_in_right"
+                app:exitAnim="@anim/fragment_slide_out_left"
+                app:popEnterAnim="@anim/fragment_slide_in_left"
+                app:popExitAnim="@anim/fragment_slide_out_right"
+                app:destination="@id/fragmentArtistDetail"/>
+    </fragment>
+
+    <fragment android:id="@+id/fragmentArtistDetail"
+              android:name="com.kinzlstanislav.lastfmartists.feature_artist_detail.view.FragmentArtistDetail"
+              android:label="FragmentArtistDetail">
+        <argument android:name="arg_artist"
+                  app:argType="com.kinzlstanislav.lastfmartists.architecture.core.model.Artist"/>
+    </fragment>
 </navigation>

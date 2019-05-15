@@ -1,11 +1,11 @@
-package com.kinzlstanislav.feature_search.viewmodel
+package com.kinzlstanislav.lastfmartists.feature_search.viewmodel
 
 import androidx.lifecycle.LiveData
 import com.kinzlstanislav.lastfmartists.architecture.core.coroutines.AppCoroutineScope
 import com.kinzlstanislav.lastfmartists.architecture.core.model.Artist
 import com.kinzlstanislav.lastfmartists.base.viewmodel.BaseViewModel
 
-abstract class FragmentSearchViewModel(appCoroutineScope: AppCoroutineScope) : BaseViewModel(appCoroutineScope) {
+abstract class SearchViewModel(appCoroutineScope: AppCoroutineScope) : BaseViewModel(appCoroutineScope) {
 
     abstract val searchState: LiveData<FragmentSearchState>
 

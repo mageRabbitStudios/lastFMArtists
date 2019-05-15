@@ -1,4 +1,4 @@
-package com.kinzlstanislav.feature_search.view.adapter
+package com.kinzlstanislav.lastfmartists.feature_search.view.adapter
 
 import com.kinzlstanislav.lastfmartists.architecture.core.model.Artist
 

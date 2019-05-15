@@ -1,17 +1,17 @@
-package com.kinzlstanislav.feature_search.viewmodel
+package com.kinzlstanislav.lastfmartists.feature_search.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.kinzlstanislav.feature_search.viewmodel.FragmentSearchViewModel.FragmentSearchState.FetchingArtistsGE
-import com.kinzlstanislav.feature_search.viewmodel.FragmentSearchViewModel.FragmentSearchState.FetchingArtistsNE
+import com.kinzlstanislav.lastfmartists.feature_search.viewmodel.SearchViewModel.FragmentSearchState.FetchingArtistsGE
+import com.kinzlstanislav.lastfmartists.feature_search.viewmodel.SearchViewModel.FragmentSearchState.FetchingArtistsNE
 import com.kinzlstanislav.lastfmartists.architecture.core.coroutines.AppCoroutineScope
 import com.kinzlstanislav.lastfmartists.architecture.domain.FetchLastfmArtistsByNameUseCase
 import com.kinzlstanislav.lastfmartists.architecture.domain.FetchLastfmArtistsByNameUseCase.Result
 
-class FragmentSearchViewModelImpl(
+class SearchViewModelImpl(
     appCoroutineScope: AppCoroutineScope,
     override val searchState: MutableLiveData<FragmentSearchState> = MutableLiveData(),
     private val fetchLastfmArtistsByNameUseCase: FetchLastfmArtistsByNameUseCase
-) : FragmentSearchViewModel(appCoroutineScope) {
+) : SearchViewModel(appCoroutineScope) {
 
     override fun fetchLastfmArtistsSuggestions(artistName: String, limit: Int) {
         searchState.value = FragmentSearchState.LoadingArtists

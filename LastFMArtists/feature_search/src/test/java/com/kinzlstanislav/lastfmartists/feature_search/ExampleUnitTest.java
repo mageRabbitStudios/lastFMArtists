@@ -1,4 +1,4 @@
-package com.kinzlstanislav.feature_search;
+package com.kinzlstanislav.lastfmartists.feature_search;
 
 import org.junit.Test;
 

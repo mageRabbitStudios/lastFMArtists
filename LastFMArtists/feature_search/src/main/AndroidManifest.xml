@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.kinzlstanislav.feature_search"/>
+<manifest package="com.kinzlstanislav.lastfmartists.feature_search"/>

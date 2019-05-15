@@ -1,5 +1,6 @@
 package com.kinzlstanislav.lastfmartists.architecture.network.api
 
+import com.kinzlstanislav.lastfmartists.architecture.network.response.LastfmArtistInfoResponse
 import com.kinzlstanislav.lastfmartists.architecture.network.response.LastfmArtistSearchResultResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
@@ -16,5 +17,14 @@ interface LastfmApiService {
         @Query("api_key") apiKey: String = LastfmRestData.LASTFM_API_KEY,
         @Query("format") format: String = "json"
     ): Deferred<LastfmArtistSearchResultResponse>
+
+    @GET("2.0/")
+    @Throws(Exception::class)
+    fun getArtistInfoResultAsync(
+        @Query("method") searchType: String = "artist.getinfo",
+        @Query("mbid") mbid: String,
+        @Query("api_key") apiKey: String = LastfmRestData.LASTFM_API_KEY,
+        @Query("format") format: String = "json"
+    ) : Deferred<LastfmArtistInfoResponse>
 
 }

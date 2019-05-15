@@ -1,9 +1,9 @@
-package com.kinzlstanislav.feature_search.injection
+package com.kinzlstanislav.lastfmartists.feature_search.injection
 
 import androidx.lifecycle.ViewModelProviders
-import com.kinzlstanislav.feature_search.view.FragmentSearch
-import com.kinzlstanislav.feature_search.viewmodel.FragmentSearchViewModel
-import com.kinzlstanislav.feature_search.viewmodel.FragmentSearchViewModelFactory
+import com.kinzlstanislav.lastfmartists.feature_search.view.FragmentSearch
+import com.kinzlstanislav.lastfmartists.feature_search.viewmodel.SearchViewModel
+import com.kinzlstanislav.lastfmartists.feature_search.viewmodel.SearchViewModelFactory
 import com.kinzlstanislav.lastfmartists.architecture.core.coroutines.AppCoroutineScope
 import com.kinzlstanislav.lastfmartists.architecture.core.dagger.scopes.PerFragment
 import com.kinzlstanislav.lastfmartists.architecture.domain.FetchLastfmArtistsByNameUseCase
@@ -15,17 +15,17 @@ class FragmentSearchModule {
 
     @Provides
     @PerFragment
-    fun provideFragmentSearchViewModel(
+    fun provideSearchViewModel(
         fragment: FragmentSearch,
-        factory: FragmentSearchViewModelFactory
+        factory: SearchViewModelFactory
     ) = ViewModelProviders.of(fragment, factory)
-        .get(FragmentSearchViewModel::class.java)
+        .get(SearchViewModel::class.java)
 
     @Provides
     @PerFragment
-    fun provideFragmentSearchViewModelFactory(
+    fun provideSearchViewModelFactory(
         appCoroutineScope: AppCoroutineScope,
         fetchLastfmArtistsByNameUseCase: FetchLastfmArtistsByNameUseCase
-    ) = FragmentSearchViewModelFactory(appCoroutineScope, fetchLastfmArtistsByNameUseCase)
+    ) = SearchViewModelFactory(appCoroutineScope, fetchLastfmArtistsByNameUseCase)
 
 }
