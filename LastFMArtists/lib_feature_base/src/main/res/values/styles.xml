@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- *************************************************************************************** -->
+    <!-- BASE APPLICATION THEME -->
+    <!-- *************************************************************************************** -->
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/app__status_bar_grey</item>
+        <item name="colorPrimary">@color/app__grey</item>
+    </style>
+
+    <!-- *************************************************************************************** -->
+    <!-- LAUNCH SCREEN THEME -->
+    <!-- *************************************************************************************** -->
+    <style name="AppTheme.Launcher" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name ="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <!-- *************************************************************************************** -->
+    <!-- TEXT STYLES -->
+    <!-- *************************************************************************************** -->
+
+    <style name="AppTheme.Text.Errors" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/app__black</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+</resources>

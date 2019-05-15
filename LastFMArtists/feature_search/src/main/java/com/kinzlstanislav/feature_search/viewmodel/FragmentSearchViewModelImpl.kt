@@ -13,7 +13,6 @@ class FragmentSearchViewModelImpl(
     private val fetchLastfmArtistsByNameUseCase: FetchLastfmArtistsByNameUseCase
 ) : FragmentSearchViewModel(appCoroutineScope) {
 
-
     override fun fetchLastfmArtistsSuggestions(artistName: String, limit: Int) {
         searchState.value = FragmentSearchState.LoadingArtists
         uiJob {

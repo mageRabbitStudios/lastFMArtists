@@ -9,10 +9,12 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:name=".LastfmArtistsApplication"
-            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
+            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning,RtlEnabled">
         <activity android:name=".view.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action
+                        android:name="android.intent.action.MAIN"
+                        android:theme="@style/AppTheme.Launcher"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>

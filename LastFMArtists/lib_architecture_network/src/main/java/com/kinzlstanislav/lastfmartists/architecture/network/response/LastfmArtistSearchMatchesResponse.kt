@@ -11,7 +11,7 @@ data class LastfmArtistSearchMatchesResponse(
 )
 
 data class LastfmArtistsResponse(
-    @field:Json(name = "artist") val match: List<LastfmArtistResponse>
+    @field:Json(name = "artist") val matchesResult: List<LastfmArtistResponse>?
 )
 
 data class LastfmArtistResponse(

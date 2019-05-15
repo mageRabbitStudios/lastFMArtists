@@ -38,12 +38,9 @@ abstract class BaseFragment : Fragment(), HasSupportFragmentInjector {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observeState()
         onFragmentCreated()
     }
 
     open fun onFragmentCreated() {}
-
-    open fun observeState() {}
 
 }
