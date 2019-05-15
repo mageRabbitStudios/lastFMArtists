@@ -9,12 +9,11 @@ import javax.inject.Inject
 class LastfmArtistResponseMapper @Inject constructor() {
 
     fun mapFromArtistsResponse(response: LastfmArtistSearchResultResponse): List<Artist> {
-        val artistSearchResponse
-                = response.matchesResult?: throw CriticalMappingException("results null")
-        val artistSearchMatchesResponse
-                = artistSearchResponse.artistsResult?: throw CriticalMappingException("artistmatches null")
-        val artistsResponse
-                = artistSearchMatchesResponse.matchesResult?: throw CriticalMappingException("artists null")
+        val artistSearchResponse = response.matchesResult ?: throw CriticalMappingException("results null")
+        val artistSearchMatchesResponse =
+            artistSearchResponse.artistsResult?: throw CriticalMappingException("artistmatches null")
+        val artistsResponse =
+            artistSearchMatchesResponse.matchesResult?: throw CriticalMappingException("artists null")
 
         val list = mutableListOf<Artist>()
         artistsResponse.forEach {
@@ -24,9 +23,9 @@ class LastfmArtistResponseMapper @Inject constructor() {
     }
 
     private fun mapFromArtistResponse(response: LastfmArtistResponse) =
-            Artist(
-                name = response.name?: "",
-                imageUrl =
-                response.images?.get(2)?.url?: response.images?.get(1)?.url?: response.images?.get(0)?.url ?: ""
-            )
+        Artist(
+            name = response.name?: "",
+            id = response.mbid?: "",
+            imageUrl = response.images?.get(3)?.url?: response.images?.get(2)?.url?: ""
+        )
 }

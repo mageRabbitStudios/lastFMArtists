@@ -23,8 +23,8 @@ class LastfmRepository @Inject constructor(
     }
 
     @Throws(IOException::class)
-    suspend fun getArtistInfo(mbid: String): ArtistInfo {
-        val response = api.getArtistInfoResultAsync(mbid = mbid).await()
+    suspend fun getArtistInfo(id: String): ArtistInfo {
+        val response = api.getArtistInfoResultAsync(mbid = id).await()
         return lastfmArtistInfoResponseMapper.mapFromArtistInfoResponse(response)
     }
 

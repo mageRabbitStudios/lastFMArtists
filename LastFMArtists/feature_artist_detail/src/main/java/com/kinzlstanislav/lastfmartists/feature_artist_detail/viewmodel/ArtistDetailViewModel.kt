@@ -17,6 +17,6 @@ abstract class ArtistDetailViewModel(appCoroutineScope: AppCoroutineScope) : Bas
         object FetchingArtistInfoGE : ArtistDetailInfoState()
     }
 
-    abstract fun fetchLastfmArtistByMbid(mbid: String)
+    abstract fun fetchLastfmArtistById(mbid: String)
 
 }

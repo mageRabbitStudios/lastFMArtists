@@ -13,9 +13,9 @@ class FetchArtistInfoUseCase @Inject constructor(
     private val repository: LastfmRepository
 ) : BaseCoroutineUseCase(appCoroutineScope) {
 
-    suspend fun executeWithMbid(mbid: String) = backgroundTask {
+    suspend fun execute(id: String) = backgroundTask {
         try {
-            val response = repository.getArtistInfo(mbid)
+            val response = repository.getArtistInfo(id)
             Result.Success(response)
         } catch(exception: Exception) {
             exception.throwIfCancellationException()

@@ -12,10 +12,10 @@ class ArtistDetailViewModelImpl(
     private val fetchArtistInfoUseCase: FetchArtistInfoUseCase
 ) : ArtistDetailViewModel(appCoroutineScope) {
 
-    override fun fetchLastfmArtistByMbid(mbid: String) {
+    override fun fetchLastfmArtistById(mbid: String) {
         artistInfoState.value = ArtistDetailInfoState.LoadingArtistInfo
         uiJob {
-            val result = fetchArtistInfoUseCase.executeWithMbid(mbid)
+            val result = fetchArtistInfoUseCase.execute(mbid)
             when (result) {
                 is GenericError -> artistInfoState.value = FetchingArtistInfoGE
                 is NetworkError -> artistInfoState.value = FetchingArtistInfoNE

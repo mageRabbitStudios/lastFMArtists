@@ -58,8 +58,8 @@ class FragmentSearch : BaseFragment(), ArtistItemClickListener {
 
     private fun setUpSearching() {
         artists_search.doOnSearch {
-            if (!query.toString().isEmpty()) {
-                viewModel.fetchLastfmArtistsSuggestions(artistName = query.toString(), limit = ARTIST_LOAD_LIMIT)
+            if (query.isNotEmpty()) {
+                viewModel.fetchLastfmArtistsSuggestions(query.toString(), ARTIST_LOAD_LIMIT)
             }
         }
     }
