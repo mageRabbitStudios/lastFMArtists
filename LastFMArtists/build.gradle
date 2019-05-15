@@ -32,5 +32,5 @@ task clean(type: Delete) {
 // report for each module instead for the entire project */
 
 //TODO: I've left some MaxLineLenght errors in the project on purpose so that you can check the report
-apply from: rootProject.file('code_quality/detekt.gradle')
-detektCheckProject.exec()
+//apply from: rootProject.file('code_quality/detekt.gradle')
+//detektCheckProject.exec()
