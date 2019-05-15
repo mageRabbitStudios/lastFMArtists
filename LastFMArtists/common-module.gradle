@@ -1,0 +1,32 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: rootProject.file('test-settings.gradle')
+
+android {
+    compileSdkVersion DefaultConfigurations.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion DefaultConfigurations.minimumSdkVersion
+        compileSdkVersion DefaultConfigurations.compileSdkVersion
+    }
+
+    compileOptions {
+        sourceCompatibility DefaultConfigurations.sourceCompatibilityVersion
+        targetCompatibility DefaultConfigurations.targetCompatibilityVersion
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+    testImplementation project(":lib_unit_testing")
+
+    implementation Dependencies.kotlin
+    implementation Dependencies.coroutines
+    implementation Dependencies.coroutinesAndroidExtension
+    implementation Dependencies.androidXCoreKtx
+}

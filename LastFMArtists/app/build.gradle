@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+apply from: rootProject.file('common-module.gradle')
+
+android {
+    defaultConfig {
+        applicationId "com.kinzlstanislav.lastfmartists"
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(":lib_core")
+    implementation project(':lib_feature_base')
+    implementation project(":lib_architecture_domain")
+    implementation project(":lib_architecture_repository")
+    implementation project(":lib_architecture_network")
+
+    implementation Dependencies.appCompatsupportLibrary
+
+    implementation Dependencies.dagger
+    implementation Dependencies.daggerAndroidSupport
+
+    kapt Dependencies.daggerCompiler
+    kapt Dependencies.daggerAndroidCompiler
+
+    implementation Dependencies.navigationUI
+    implementation Dependencies.navigationFragment
+
+    implementation Dependencies.lifecycleExtensions
+
+    implementation Dependencies.okhttpLogging
+    implementation Dependencies.retrofit
+}

@@ -1,0 +1,36 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url 'https://plugins.gradle.org/m2/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath ClasspathxDependencies.kotlinGradlePlugin
+        classpath ClasspathxDependencies.androidGradlePlugin
+        classpath ClasspathxDependencies.detektGradlePlugin
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.fabric.io/public' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+/* Runs the detekt once for all modules with unified report after every build script evaluation.
+ This is important, that it is not included in the modules scope, because otherwise it would run
+// report for each module instead for the entire project */
+
+//TODO: I've left some MaxLineLenght errors in the project on purpose so that you can check the report
+apply from: rootProject.file('code_quality/detekt.gradle')
+detektCheckProject.exec()
