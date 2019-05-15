@@ -6,7 +6,8 @@ import com.kinzlstanislav.lastfmartists.architecture.core.coroutines.AppCoroutin
 abstract class BaseViewModel(appCoroutineScope: AppCoroutineScope) : ViewModel(), AppCoroutineScope by appCoroutineScope {
 
     override fun onCleared() {
-        cancelAll()
+        cancelAllJobs()
         super.onCleared()
     }
+
 }

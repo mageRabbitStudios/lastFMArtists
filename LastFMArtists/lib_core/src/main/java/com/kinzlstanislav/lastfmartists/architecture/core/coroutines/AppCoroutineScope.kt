@@ -16,5 +16,5 @@ interface AppCoroutineScope : CoroutineScope {
 
     suspend fun <T> ioTask(block: suspend CoroutineScope.() -> T): T
 
-    fun cancelAll()
+    fun cancelAllJobs()
 }

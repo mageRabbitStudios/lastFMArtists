@@ -1,5 +1,6 @@
 package com.kinzlstanislav.lastfmartists.base.extension
 
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -18,4 +19,14 @@ fun Fragment.disableTouch() {
 fun Fragment.enableTouch() {
     requireActivity().window.clearFlags(
         WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+}
+
+/**
+ * Useful when performing actions on views that cannot be performed actions on because
+ * not working synthetic extensions (view is in other module for example)
+ */
+fun Fragment.fromId(id: Int): View = requireActivity().findViewById(id)
+
+fun Fragment.onClickOn(id: Int, doOnClick: () -> Unit) {
+    fromId(id).setOnClickListener { doOnClick() }
 }

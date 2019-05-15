@@ -1,6 +1,8 @@
 package com.kinzlstanislav.lastfmartists.feature_artist_detail.view
 
 import android.annotation.SuppressLint
+import android.os.Build
+import android.text.Html
 import com.kinzlstanislav.lastfmartists.architecture.core.model.Artist
 import com.kinzlstanislav.lastfmartists.architecture.core.model.ArtistInfo
 import com.kinzlstanislav.lastfmartists.base.ArgumentConstants.EXTRAS_ARTIST
@@ -37,10 +39,21 @@ class FragmentArtistDetail : BaseFragment() {
 
     @SuppressLint("SetTextI18n")
     private fun updateTv(artistInfo: ArtistInfo) {
-        shit.text = "${artist.name}\n\n" +
-                "${artistInfo.published}\n\n" +
-                "${artistInfo.summary}\n\n" +
-                artistInfo.content
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            shit.text = Html.fromHtml(
+                "${artist.name}\n\n" +
+                        "${artistInfo.published}\n\n" +
+                        "${artistInfo.summary}\n\n" +
+                        artistInfo.content
+                , Html.FROM_HTML_MODE_COMPACT
+            )
+        } else {
+            shit.text = Html.fromHtml(
+                "${artist.name}\n\n" +
+                        "${artistInfo.published}\n\n" +
+                        "${artistInfo.summary}\n\n" +
+                        artistInfo.content)
+        }
     }
 
 }

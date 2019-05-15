@@ -1,2 +1,5 @@
 <resources>
+    <string name="fragment_search_welcome_search">It\'s time to start looking for some artists! Click the magnifying
+        glass above to do that.
+    </string>
 </resources>

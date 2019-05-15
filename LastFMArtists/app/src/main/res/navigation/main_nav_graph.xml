@@ -12,7 +12,6 @@
                 app:enterAnim="@anim/fragment_slide_in_right"
                 app:exitAnim="@anim/fragment_slide_out_left"
                 app:popEnterAnim="@anim/fragment_slide_in_left"
-                app:popExitAnim="@anim/fragment_slide_out_right"
                 app:destination="@id/fragmentArtistDetail"/>
     </fragment>
 

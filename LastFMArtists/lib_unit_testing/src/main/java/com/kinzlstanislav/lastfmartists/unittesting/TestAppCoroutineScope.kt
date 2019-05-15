@@ -40,7 +40,7 @@ class TestAppCoroutineScope(private val coroutineDispatcherProvider: DispatcherP
         return startTask(coroutineDispatcherProvider.io, block)
     }
 
-    override fun cancelAll() = job.cancelChildren()
+    override fun cancelAllJobs() = job.cancelChildren()
 
     private fun startJob(
         coroutineContext: CoroutineContext,

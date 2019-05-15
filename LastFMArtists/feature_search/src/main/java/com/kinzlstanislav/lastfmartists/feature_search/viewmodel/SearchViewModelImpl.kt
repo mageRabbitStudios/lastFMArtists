@@ -15,6 +15,7 @@ class SearchViewModelImpl(
 
     override fun fetchLastfmArtistsSuggestions(artistName: String, limit: Int) {
         searchState.value = FragmentSearchState.LoadingArtists
+        cancelAllJobs()
         uiJob {
             val result = fetchLastfmArtistsByNameUseCase.execute(artistName, limit)
             when (result) {

@@ -5,19 +5,23 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.ViewFlipper
 
-class StateViewFlipper(context: Context, attrs: AttributeSet?
+class StateViewFlipper(
+    context: Context, attrs: AttributeSet?
 ) : ViewFlipper(context, attrs) {
 
     init {
-        // Animation Preferences
-        setInAnimation(context, android.R.anim.fade_in)
-        setOutAnimation(context, android.R.anim.fade_out)
+        visibility = View.GONE
     }
 
     fun showView(view: View) {
+        if (visibility == View.GONE) {
+            visibility = View.VISIBLE
+        }
+
         if (indexOfChild(view) == -1) {
             addView(view)
         }
+
         if (currentView != view) {
             // Flip to specific view
             displayedChild = indexOfChild(view)

@@ -22,8 +22,8 @@
                     android:layout_height="wrap_content"
                     android:focusableInTouchMode="true"
                     android:focusable="true"
-                    tools:layout_height="80dp"
-                    app:queryHint="Search for artists..."
+                    tools:layout_height="@dimen/search_view_height"
+                    app:queryHint="Search for artists... (eg Stanislav)"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp">
 
@@ -41,18 +41,41 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <ProgressBar
-            android:visibility="gone"
-            android:id="@+id/contributors_list_loader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:layout_marginTop="80dp"
-            android:indeterminateTint="@color/app__black"
-            android:indeterminateTintMode="src_atop"
+    <com.kinzlstanislav.lastfmartists.base.view.StateViewFlipper
+            android:id="@+id/flipper_search"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/search_view_height"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <include
+                android:id="@+id/search_generic_error"
+                layout="@layout/view_generic_error"/>
+
+        <include
+                android:id="@+id/search_network_error"
+                layout="@layout/view_network_error"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/search_screen_welcome"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/fragment_search_welcome_search"
+                android:layout_gravity="center"/>
+
+        <ProgressBar
+                android:id="@+id/contributors_list_loader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/app__black"
+                android:indeterminateTintMode="src_atop"
+                android:layout_gravity="center"/>
+
+    </com.kinzlstanislav.lastfmartists.base.view.StateViewFlipper>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

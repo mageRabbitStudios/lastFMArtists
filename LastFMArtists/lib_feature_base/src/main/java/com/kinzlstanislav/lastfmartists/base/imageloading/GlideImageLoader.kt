@@ -11,22 +11,10 @@ import javax.inject.Inject
 
 class GlideImageLoader @Inject constructor() {
 
-    private companion object {
-        val SCALE_TYPE_WHILE_LOADING = ImageView.ScaleType.CENTER
-    }
-
-    fun loadFromUrl(context: Context, url: String, target: ImageView, showPlaceholder: Boolean = true) {
+    fun loadFromUrl(context: Context, url: String, target: ImageView) {
         Glide.with(context)
             .applyDefaultRequestOptions(RequestOptions()
-                .centerCrop()
-                .apply {
-                    if (showPlaceholder) {
-                        target.scaleType = SCALE_TYPE_WHILE_LOADING
-                        placeholder((context.getDrawable(R.drawable.placeholder) as AnimatedVectorDrawable).also {
-                            it.start()
-                        })
-                    }
-                })
+                .centerCrop())
             .load(url)
             .transition(withCrossFade())
             .into(target)

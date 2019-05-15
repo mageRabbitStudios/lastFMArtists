@@ -5,16 +5,18 @@
     <!-- BASE APPLICATION THEME -->
     <!-- *************************************************************************************** -->
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimaryDark">@color/app__status_bar_grey</item>
-        <item name="colorPrimary">@color/app__grey</item>
-    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
 
     <!-- *************************************************************************************** -->
     <!-- LAUNCH SCREEN THEME -->
     <!-- *************************************************************************************** -->
-    <style name="AppTheme.Launcher" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    <style name="AppTheme.Launcher">
         <item name ="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="AppTheme.InApp">
+        <item name ="android:windowBackground">@color/app__white</item>
     </style>
 
     <!-- *************************************************************************************** -->

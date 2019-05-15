@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
+        setTheme(R.style.AppTheme_InApp)
         setContentView(R.layout.activity_main)
     }
 }
