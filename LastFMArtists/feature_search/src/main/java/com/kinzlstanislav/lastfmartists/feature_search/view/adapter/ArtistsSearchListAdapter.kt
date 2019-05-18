@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kinzlstanislav.lastfmartists.feature_search.R
 import com.kinzlstanislav.lastfmartists.architecture.core.model.Artist
 import com.kinzlstanislav.lastfmartists.base.imageloading.GlideImageLoader
-import com.kinzlstanislav.lastfmartists.base.static.inflateViewForHolder
+import com.kinzlstanislav.lastfmartists.base.inflateViewForHolder
 
 class ArtistsSearchListAdapter(
     private val imageLoader: GlideImageLoader,
@@ -15,7 +15,11 @@ class ArtistsSearchListAdapter(
     private var artistList: MutableList<Artist> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtistViewHolder
-        = ArtistViewHolder(inflateViewForHolder(parent, R.layout.item_artist_tile), imageLoader, itemClickListener)
+        = ArtistViewHolder(
+        inflateViewForHolder(
+            parent,
+            R.layout.item_artist_tile
+        ), imageLoader, itemClickListener)
 
     override fun getItemCount() = artistList.size
 

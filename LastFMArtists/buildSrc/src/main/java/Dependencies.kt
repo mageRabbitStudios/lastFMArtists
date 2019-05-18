@@ -19,10 +19,11 @@ object Versions {
     const val archComponentsVersion = "2.0.0"
     const val materialComponentsVersion = "1.0.0"
     const val constraintLayoutVersion = "1.1.2"
-    const val navigationVersion = "2.0.0-rc02"
+    const val navigationVersion = "2.0.0"
+    const val androidxActivityAlphaVersion = "1.0.0-alpha08"
+    const val androidxFragmentAlphaVersion = "1.1.0-alpha08"
 
     const val recyclerViewVersion = "1.0.0"
-
 
     const val daggerVersion = "2.16"
 

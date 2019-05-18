@@ -5,7 +5,7 @@
     <!-- BASE APPLICATION THEME -->
     <!-- *************************************************************************************** -->
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" />
 
     <!-- *************************************************************************************** -->
     <!-- LAUNCH SCREEN THEME -->

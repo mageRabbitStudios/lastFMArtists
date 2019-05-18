@@ -19,7 +19,7 @@
             android:layout_width="match_parent">
 
         <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/artist_list_item_img_artist"
+                android:id="@+id/item_img_artist"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/app__grey"
@@ -40,7 +40,7 @@
                 android:maxLines="1"
                 android:textColor="@color/app__black"
                 tools:text="Pink Floyd Madona Revival"
-                app:layout_constraintStart_toEndOf="@id/artist_list_item_img_artist"
+                app:layout_constraintStart_toEndOf="@id/item_img_artist"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>

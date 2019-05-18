@@ -32,15 +32,13 @@ abstract class BaseFragment : Fragment(), HasSupportFragmentInjector {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(layoutResourceId, container, false)
-    }
+    ) = inflater.inflate(layoutResourceId, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onFragmentCreated()
     }
 
-    open fun onFragmentCreated() {}
+    abstract fun onFragmentCreated()
 
 }

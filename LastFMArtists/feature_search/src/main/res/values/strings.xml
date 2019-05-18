@@ -2,4 +2,5 @@
     <string name="fragment_search_welcome_search">It\'s time to start looking for some artists! Click the magnifying
         glass above to do that.
     </string>
+    <string name="search_for_your_favorite_artists">Search for your favorite artists</string>
 </resources>

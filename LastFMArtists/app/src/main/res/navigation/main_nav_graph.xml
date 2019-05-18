@@ -12,7 +12,7 @@
                 app:enterAnim="@anim/fragment_slide_in_right"
                 app:exitAnim="@anim/fragment_slide_out_left"
                 app:popEnterAnim="@anim/fragment_slide_in_left"
-                app:destination="@id/fragmentArtistDetail"/>
+                app:destination="@id/fragmentArtistDetail" app:popExitAnim="@anim/fragment_slide_out_right"/>
     </fragment>
 
     <fragment android:id="@+id/fragmentArtistDetail"
@@ -20,5 +20,7 @@
               android:label="FragmentArtistDetail">
         <argument android:name="arg_artist"
                   app:argType="com.kinzlstanislav.lastfmartists.architecture.core.model.Artist"/>
+        <argument android:name="arg_avatar_bitmap"
+                  app:argType="com.kinzlstanislav.lastfmartists.architecture.core.model.ArtistAvatarBitmap"/>
     </fragment>
 </navigation>

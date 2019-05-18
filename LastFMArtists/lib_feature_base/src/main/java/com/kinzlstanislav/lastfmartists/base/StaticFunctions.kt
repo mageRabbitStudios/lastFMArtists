@@ -1,4 +1,4 @@
-package com.kinzlstanislav.lastfmartists.base.static
+package com.kinzlstanislav.lastfmartists.base
 
 import android.view.LayoutInflater
 import android.view.View

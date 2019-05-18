@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Lastfm Search Artists</string>
+    <string name="summary_of_the_artist">Summary of the Artist</string>
+    <string name="more_about_artist_text">More about %1s</string>
 </resources>

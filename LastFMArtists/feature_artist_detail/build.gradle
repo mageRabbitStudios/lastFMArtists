@@ -1,1 +1,5 @@
 apply from: rootProject.file('common-feature.gradle')
+
+dependencies {
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+}

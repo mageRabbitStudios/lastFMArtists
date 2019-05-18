@@ -11,7 +11,7 @@
             android:name=".LastfmArtistsApplication"
             tools:ignore="GoogleAppIndexingWarning,RtlEnabled">
         <activity
-                android:name=".view.MainActivity"
+                android:name=".view.ApplicationActivity"
                 android:theme="@style/AppTheme.Launcher"
                 android:windowSoftInputMode="adjustResize">
             <intent-filter>

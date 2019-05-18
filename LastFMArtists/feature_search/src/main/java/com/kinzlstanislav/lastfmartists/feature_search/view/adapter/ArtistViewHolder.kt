@@ -1,8 +1,10 @@
 package com.kinzlstanislav.lastfmartists.feature_search.view.adapter
 
 import android.view.View
+import androidx.core.graphics.drawable.toBitmap
 import androidx.recyclerview.widget.RecyclerView
 import com.kinzlstanislav.lastfmartists.architecture.core.model.Artist
+import com.kinzlstanislav.lastfmartists.architecture.core.model.ArtistAvatarBitmap
 import com.kinzlstanislav.lastfmartists.base.imageloading.GlideImageLoader
 import com.kinzlstanislav.lastfmartists.base.viewholder.ShrinkOnTouchTileViewHolder
 import com.kinzlstanislav.lastfmartists.base.viewholder.ShrinkOnTouchTileViewHolderImpl
@@ -18,8 +20,11 @@ class ArtistViewHolder(
 
     fun bind(artist: Artist) {
         item_artist_name.text = artist.name
-        imageLoader.loadFromUrl(containerView.context, artist.imageUrl, artist_list_item_img_artist)
-        touchUpAction = { itemOnClickListener.onArtistItemClicked(artist) }
+        imageLoader.loadFromUrl(containerView.context, artist.imageUrl, item_img_artist)
+        touchUpAction = {
+            val avatarBitmap = ArtistAvatarBitmap(item_img_artist.drawable.toBitmap())
+            itemOnClickListener.onArtistItemClicked(artist, avatarBitmap)
+        }
     }
 
 }

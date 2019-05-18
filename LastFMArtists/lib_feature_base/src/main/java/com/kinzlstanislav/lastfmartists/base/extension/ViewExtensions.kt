@@ -43,3 +43,9 @@ fun View.show() {
 fun View.hide() {
     this.visibility = View.GONE
 }
+
+fun View.appear() {
+    this.animate()
+        .alpha(1f)
+        .duration = 1500L
+}

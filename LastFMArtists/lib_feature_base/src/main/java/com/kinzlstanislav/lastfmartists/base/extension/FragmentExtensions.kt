@@ -3,7 +3,11 @@ package com.kinzlstanislav.lastfmartists.base.extension
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 
 
 fun Fragment.showToast(message: String, length: Int = Toast.LENGTH_SHORT) {
@@ -30,3 +34,10 @@ fun Fragment.fromId(id: Int): View = requireActivity().findViewById(id)
 fun Fragment.onClickOn(id: Int, doOnClick: () -> Unit) {
     fromId(id).setOnClickListener { doOnClick() }
 }
+
+fun <T> Fragment.observe(liveData: LiveData<T>, body: (T) -> Unit = {}) {
+    liveData.observe(this.viewLifecycleOwner, Observer { body(it) })
+}
+
+fun Fragment.requireSupportActionBar(): ActionBar =
+        (requireActivity() as AppCompatActivity).supportActionBar?: throw TypeCastException()

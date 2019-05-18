@@ -10,7 +10,7 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
+class ApplicationActivity : AppCompatActivity(), HasSupportFragmentInjector{
 
     @Inject
     lateinit var dispatchingFragmentInjector: DispatchingAndroidInjector<Fragment>
@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme_InApp)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_application)
     }
+
 }
