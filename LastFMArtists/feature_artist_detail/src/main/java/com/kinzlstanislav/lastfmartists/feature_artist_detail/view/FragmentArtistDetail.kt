@@ -2,7 +2,6 @@ package com.kinzlstanislav.lastfmartists.feature_artist_detail.view
 
 import android.os.Build
 import android.text.Html
-import android.view.View
 import com.kinzlstanislav.lastfmartists.architecture.core.model.Artist
 import com.kinzlstanislav.lastfmartists.architecture.core.model.ArtistAvatarBitmap
 import com.kinzlstanislav.lastfmartists.architecture.core.model.ArtistInfo

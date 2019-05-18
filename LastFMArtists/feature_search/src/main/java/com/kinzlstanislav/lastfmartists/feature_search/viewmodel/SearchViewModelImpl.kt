@@ -1,11 +1,10 @@
 package com.kinzlstanislav.lastfmartists.feature_search.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.kinzlstanislav.lastfmartists.feature_search.viewmodel.SearchViewModel.FragmentSearchState.FetchingArtistsGE
-import com.kinzlstanislav.lastfmartists.feature_search.viewmodel.SearchViewModel.FragmentSearchState.FetchingArtistsNE
 import com.kinzlstanislav.lastfmartists.architecture.core.coroutines.AppCoroutineScope
 import com.kinzlstanislav.lastfmartists.architecture.domain.FetchLastfmArtistsByNameUseCase
 import com.kinzlstanislav.lastfmartists.architecture.domain.FetchLastfmArtistsByNameUseCase.Result
+import com.kinzlstanislav.lastfmartists.feature_search.viewmodel.SearchViewModel.FragmentSearchState.*
 
 class SearchViewModelImpl(
     appCoroutineScope: AppCoroutineScope,
@@ -21,7 +20,7 @@ class SearchViewModelImpl(
             when (result) {
                 is Result.GenericError -> searchState.value = FetchingArtistsGE
                 is Result.NetworkError -> searchState.value = FetchingArtistsNE
-                is Result.Success -> searchState.value = FragmentSearchState.ArtistsLoaded(result.artists)
+                is Result.Success -> searchState.value = ArtistsLoaded(result.artists)
             }
         }
     }

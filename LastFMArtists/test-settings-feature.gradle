@@ -6,7 +6,7 @@ dependencies {
     testImplementation TestDependencies.espressoIntents
     testImplementation TestDependencies.espressoContrib
 
-    /* Adds great UI test assertions and helping methods for Robolectric fragment tests
+    /* Adds UI test assertions and helping methods for Robolectric fragment tests
     List of commands can be found here:
     https://github.com/SchibstedSpain/Barista
     Barista is an alternative UI Espresso test asserting lib to: Cappuccino, Kappuccino, Kakao and more...

@@ -15,13 +15,12 @@ import androidx.test.espresso.intent.Intents
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.kinzlstanislav.lastfmartists.viewtesting.helpers.InstrumentationTestsHelper
+import io.mockk.mockk
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.After
 import org.junit.Assert.fail
 import org.junit.Before
 import org.junit.runner.RunWith
-import org.mockito.Mock
-import org.mockito.MockitoAnnotations
 
 /**
  * Created by Stanislav Kinzl, for easy fragment unit testing
@@ -67,8 +66,7 @@ abstract class FragmentDaggerTest<FRAGMENT : Fragment> {
 
     abstract val subject: FRAGMENT
 
-    @Mock
-    protected lateinit var mockNavController: NavController
+    protected var mockNavController = mockk<NavController>()
 
     @CallSuper
     @Before
@@ -76,7 +74,6 @@ abstract class FragmentDaggerTest<FRAGMENT : Fragment> {
         Intents.init()
         InstrumentationRegistry.getInstrumentation().targetContext
                 .applicationContext.setTheme(TEST_ENVIRONMENT_THEME)
-        MockitoAnnotations.initMocks(this)
     }
 
     @CallSuper

@@ -13,7 +13,7 @@ class ArtistDetailViewModelImpl(
 ) : ArtistDetailViewModel(appCoroutineScope) {
 
     override fun fetchLastfmArtistById(mbid: String) {
-        artistInfoState.value = ArtistDetailInfoState.LoadingArtistInfo
+        artistInfoState.value = LoadingArtistInfo
         uiJob {
             val result = fetchArtistInfoUseCase.execute(mbid)
             when (result) {

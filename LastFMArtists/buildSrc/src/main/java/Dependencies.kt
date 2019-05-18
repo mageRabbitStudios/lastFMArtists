@@ -20,8 +20,6 @@ object Versions {
     const val materialComponentsVersion = "1.0.0"
     const val constraintLayoutVersion = "1.1.2"
     const val navigationVersion = "2.0.0"
-    const val androidxActivityAlphaVersion = "1.0.0-alpha08"
-    const val androidxFragmentAlphaVersion = "1.1.0-alpha08"
 
     const val recyclerViewVersion = "1.0.0"
 
@@ -37,7 +35,6 @@ object Versions {
     const val androidTestRunnerVersion = "1.1.0-alpha4"
     const val uiAutomatorVersion = "2.2.0-alpha4"
     const val junitVersion = "4.12"
-    const val mockitoKotlinVersion = "2.0.0"
     const val mockitoVersion = "2.23.0"
     const val assertJVersion = "3.11.1"
     const val assertJAndroidVersion = "1.2.0"
@@ -46,6 +43,7 @@ object Versions {
     const val androidxJunitVersion = "1.1.0"
     const val androidxFragmentTestingVersion = "1.1.0-alpha06"
     const val androidxTestCoreVersion = "1.0.0"
+    const val mockkVersion = "1.9.3"
 
     const val baristaVersion = "2.8.0"
 
@@ -142,9 +140,6 @@ object Dependencies {
 object TestDependencies {
     // Unit Testing
     const val junit = "junit:junit:${Versions.junitVersion}"
-    const val mockito = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlinVersion}"
-    const val mockitoCore = "org.mockito:mockito-core:${Versions.mockitoVersion}"
-    const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockitoVersion}"
     const val assertJ = "org.assertj:assertj-core:${Versions.assertJVersion}"
     const val testSupportRunner = "androidx.test:runner:${Versions.androidxTestVersion}"
     const val androidxTestRules = "androidx.test:rules:${Versions.androidxTestVersion}"
@@ -159,6 +154,7 @@ object TestDependencies {
     const val androidxFragmentTesting = "androidx.fragment:fragment-testing:${Versions.androidxFragmentTestingVersion}"
     const val barista = "com.schibsted.spain:barista:${Versions.baristaVersion}"
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesVersion}"
+    const val mockk = "io.mockk:mockk:${Versions.mockkVersion}"
 }
 
 @SuppressWarnings("MaxLineLength")

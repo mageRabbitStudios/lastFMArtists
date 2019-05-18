@@ -5,12 +5,14 @@ import com.kinzlstanislav.lastfmartists.architecture.core.extension.isConnection
 import com.kinzlstanislav.lastfmartists.architecture.core.extension.throwIfCancellationException
 import com.kinzlstanislav.lastfmartists.architecture.core.model.ArtistInfo
 import com.kinzlstanislav.lastfmartists.architecture.core.usecase.BaseCoroutineUseCase
-import com.kinzlstanislav.lastfmartists.architecture.repository.LastfmRepository
+import com.kinzlstanislav.lastfmartists.architecture.domain.FetchArtistInfoUseCase.Result.GenericError
+import com.kinzlstanislav.lastfmartists.architecture.domain.FetchArtistInfoUseCase.Result.NetworkError
+import com.kinzlstanislav.lastfmartists.architecture.repository.LastfmArtistRepository
 import javax.inject.Inject
 
 class FetchArtistInfoUseCase @Inject constructor(
     appCoroutineScope: AppCoroutineScope,
-    private val repository: LastfmRepository
+    private val repository: LastfmArtistRepository
 ) : BaseCoroutineUseCase(appCoroutineScope) {
 
     suspend fun execute(id: String) = backgroundTask {
@@ -19,7 +21,7 @@ class FetchArtistInfoUseCase @Inject constructor(
             Result.Success(response)
         } catch(exception: Exception) {
             exception.throwIfCancellationException()
-            if (exception.isConnectionError()) Result.NetworkError else Result.GenericError
+            if (exception.isConnectionError()) NetworkError else GenericError
         }
     }
 

@@ -7,9 +7,12 @@ dependencies{
     implementation Dependencies.coroutinesAndroidExtension
 
     implementation TestDependencies.junit
-    implementation TestDependencies.mockitoInline
     implementation TestDependencies.coroutinesTest
-    implementation TestDependencies.lifecycleTestHelpers
     implementation Dependencies.lifecycleExtensions
     implementation TestDependencies.assertJ
+
+    implementation(TestDependencies.lifecycleTestHelpers) {
+        exclude group: 'org.mockito'
+    }
+    implementation TestDependencies.mockk
 }

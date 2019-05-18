@@ -1,0 +1,2 @@
+package com.kinzlstanislav.lastfmartists.feature_artist_detail.view
+

@@ -2,6 +2,7 @@ package com.kinzlstanislav.lastfmartists.unittesting
 
 import com.kinzlstanislav.lastfmartists.architecture.core.coroutines.AppCoroutineScope
 import com.kinzlstanislav.lastfmartists.architecture.core.coroutines.DispatcherProvider
+import io.mockk.MockKException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancelChildren

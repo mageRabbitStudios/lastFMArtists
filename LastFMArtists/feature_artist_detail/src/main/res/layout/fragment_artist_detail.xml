@@ -11,12 +11,13 @@
     <androidx.core.widget.NestedScrollView
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:background="@color/app__white"
+            android:layout_marginTop="?attr/actionBarSize"
             android:scrollbars="none"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/artist_detail_toolbar">
+            app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -111,10 +112,6 @@ Paroubek spent his one-year military service as an army food services supervisor
 In 1979, as an executive committee member of the Czechoslovak Socialist Party, one of the puppet parties of the Communist regime, he attracted the attention of the communist state secret police (StB).[4] He met agents three times in meetings where he allegedly expressed loyalty to the communist government and disagreement with opposition groups such as Charter 77.[5] He was assigned the code name Roko, after his pet parakeet,[6] but never actually signed a cooperation agreement with the secret police, and after 1982 the cooperation ceased, as Paroubek.[7][8]
 
 Following the Velvet Revolution in November 1989, Paroubek joined the re-established Social Democratic Party (ČSSD), and was given an executive post by chairman Jiří Horák. In 1993 he stood for chairmanship of the party but was defeated by Miloš Zeman. In 2000, he placed fourth in elections to the Senate of the Czech Republic in the Prague 8 district.[9] Paroubek held senior positions in the Prague municipal government for over 14 years."/>
-
-                <View android:layout_width="match_parent"
-                      android:layout_height="500dp"
-                      android:background="@color/app__white"/>
 
             </LinearLayout>
 

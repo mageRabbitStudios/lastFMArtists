@@ -9,14 +9,14 @@ dependencies {
     implementation Dependencies.dagger
     implementation Dependencies.daggerAndroidSupport
 
-    implementation TestDependencies.mockitoInline
-
     implementation TestDependencies.espressoIntents
 
     implementation Dependencies.navigationUI
     implementation Dependencies.navigationFragment
 
     implementation Dependencies.recyclerView
+
+    implementation "io.mockk:mockk:1.9.3"
 
     implementation TestDependencies.assertJ
     implementation TestDependencies.robolectric

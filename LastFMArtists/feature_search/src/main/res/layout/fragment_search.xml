@@ -8,14 +8,15 @@
         android:background="#ffffff"
         android:layout_height="match_parent">
 
-    <include layout="@layout/fragment_search_toolbar" />
+    <include layout="@layout/fragment_search_toolbar"/>
 
     <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_toolbar">
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="?attr/actionBarSize">
 
         <LinearLayout
                 android:layout_width="match_parent"

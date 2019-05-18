@@ -8,7 +8,7 @@ import com.kinzlstanislav.lastfmartists.architecture.network.mapper.LastfmArtist
 import java.io.IOException
 import javax.inject.Inject
 
-class LastfmRepository @Inject constructor(
+class LastfmArtistRepository @Inject constructor(
     private val api: LastfmApiService,
     private val lastfmArtistResponseMapper: LastfmArtistResponseMapper,
     private val lastfmArtistInfoResponseMapper: LastfmArtistInfoResponseMapper
