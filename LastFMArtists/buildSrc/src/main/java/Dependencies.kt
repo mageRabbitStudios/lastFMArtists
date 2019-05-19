@@ -30,7 +30,8 @@ object Versions {
 
     const val glideVersion = "4.8.0"
 
-    const val robolectricVersion = "4.1"
+    const val robolectricVersion = "4.3-beta-1"
+    const val autoserviceVersion = "1.0-rc4"
     const val androidxTestVersion = "1.1.1"
     const val androidTestRunnerVersion = "1.1.0-alpha4"
     const val uiAutomatorVersion = "2.2.0-alpha4"
@@ -134,6 +135,9 @@ object Dependencies {
 
     //Maps
     const val googleMaps = "com.google.android.gms:play-services-maps:${Versions.googleMapsVersion}"
+
+    //Other
+    const val autoService = "com.google.auto.service:auto-service:${Versions.autoserviceVersion}" //for robolectric
 }
 
 @SuppressWarnings("MaxLineLength")

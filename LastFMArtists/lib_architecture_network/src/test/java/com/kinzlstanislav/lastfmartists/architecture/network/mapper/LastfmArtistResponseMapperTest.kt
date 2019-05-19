@@ -6,6 +6,7 @@ import com.kinzlstanislav.lastfmartists.architecture.network.response.*
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
+// maps responses
 private val SOME_RESPONSE = LastfmArtistSearchResultResponse(
     matchesResult = LastfmArtistSearchMatchesResponse(
         artistsResult = LastfmArtistsResponse(
@@ -76,6 +77,7 @@ private val SOME_RESPONSE_N2 = LastfmArtistSearchResultResponse(
     )
 )
 
+// throws responses
 private val SOME_RESPONSE_E1 = LastfmArtistSearchResultResponse(
     matchesResult = LastfmArtistSearchMatchesResponse(
         artistsResult = LastfmArtistsResponse(

@@ -17,7 +17,7 @@ import org.junit.Test
 import java.lang.Exception
 
 private val SOME_ARTIST_LIST = listOf(Artist("User", "123", "url"))
-private val SOME_ARTIST_INFO = ArtistInfo(emptyList(), "someday", "summary", "content")
+private val SOME_ARTIST_INFO = ArtistInfo("someday", "summary", "content")
 
 class LastfmArtistRepositoryTest {
 

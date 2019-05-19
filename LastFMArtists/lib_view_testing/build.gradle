@@ -1,23 +1,31 @@
 apply from: rootProject.file('common-library.gradle')
 
 dependencies {
+    // androidx test
     implementation TestDependencies.androidxJunit
     implementation TestDependencies.androidxTestRules
     implementation TestDependencies.androidxTestCore
     implementation TestDependencies.androidxFragmentTesting
 
+    // dagger
     implementation Dependencies.dagger
     implementation Dependencies.daggerAndroidSupport
 
+    // mockk
+    implementation TestDependencies.mockk
+
+    // espresso
     implementation TestDependencies.espressoIntents
 
+    // for testing navigation
     implementation Dependencies.navigationUI
     implementation Dependencies.navigationFragment
 
+    // others
     implementation Dependencies.recyclerView
-
-    implementation "io.mockk:mockk:1.9.3"
+    implementation Dependencies.androidXCoreKtx
 
     implementation TestDependencies.assertJ
     implementation TestDependencies.robolectric
+    annotationProcessor Dependencies.autoService // required by Robolectric 4.3-beta1
 }

@@ -5,7 +5,6 @@ android {
             returnDefaultValues = true
             all {
                 // when you run ./gradlew tDUT, this will output nicely the test result
-                maxHeapSize = "2048m"
                 testLogging {
                     events 'passed', 'skipped', 'failed'
                     showStackTraces = true

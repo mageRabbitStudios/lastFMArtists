@@ -53,7 +53,7 @@ class FragmentSearch : BaseFragment(), ArtistItemClickListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = savedView ?: super.onCreateView(inflater, container, savedInstanceState)
+    ): View = savedView ?: super.onCreateView(inflater, container, savedInstanceState)
 
     override fun onFragmentCreated() {
         observe(viewModel.searchState, ::handleState)
@@ -78,12 +78,18 @@ class FragmentSearch : BaseFragment(), ArtistItemClickListener {
             artistsAdapter.updateItems(state.artists)
             list.show()
         }
-        is SearchViewModel.FragmentSearchState.LoadingArtists ->
-            list.hide().run { flipper.showView(loader) }
-        is SearchViewModel.FragmentSearchState.FetchingArtistsNE ->
-            list.hide().run { flipper.showView(networkError) }
-        is SearchViewModel.FragmentSearchState.FetchingArtistsGE ->
-            list.hide().run { flipper.showView(genericError) }
+        is SearchViewModel.FragmentSearchState.LoadingArtists -> {
+            list.hide()
+            flipper.showView(loader)
+        }
+        is SearchViewModel.FragmentSearchState.FetchingArtistsNE -> {
+            list.hide()
+            flipper.showView(networkError)
+        }
+        is SearchViewModel.FragmentSearchState.FetchingArtistsGE -> {
+            list.hide()
+            flipper.showView(genericError)
+        }
     }
 
     override fun onArtistItemClicked(artist: Artist, artistAvatarBitmap: ArtistAvatarBitmap) {
