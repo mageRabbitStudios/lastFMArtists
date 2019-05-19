@@ -48,7 +48,7 @@ abstract class Robolectric4FragmentDaggerTest<FRAGMENT : Fragment> {
     /**
      * For verifying navigation, feel free to remove it if you are not using Nav. Component.
      * */
-    protected var mockNavController = mockk<NavController>()
+    protected var mockNavController = mockk<NavController>(relaxed = true)
 
     @CallSuper
     @Before
@@ -64,19 +64,19 @@ abstract class Robolectric4FragmentDaggerTest<FRAGMENT : Fragment> {
         Intents.release()
     }
 
-    protected fun getResString(@StringRes id: Int, args: Any? = null): String {
+    protected fun getString(@StringRes id: Int, args: Any? = null): String {
         return targetContext.resources.getString(id, args)
     }
 
-    protected fun getResInteger(@IntegerRes id: Int): Int {
+    protected fun getInteger(@IntegerRes id: Int): Int {
         return targetContext.resources.getInteger(id)
     }
 
-    protected fun getResColor(@ColorRes id: Int): Int {
+    protected fun getColor(@ColorRes id: Int): Int {
         return ContextCompat.getColor(targetContext, id)
     }
 
-    protected fun getResDrawable(@DrawableRes id: Int): Drawable {
+    protected fun getDrawable(@DrawableRes id: Int): Drawable {
         return ContextCompat.getDrawable(targetContext, id)
                 ?: throw KotlinNullPointerException("No such drawable found under that id")
     }

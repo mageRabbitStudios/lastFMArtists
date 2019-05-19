@@ -7,6 +7,7 @@ import dagger.android.support.HasSupportFragmentInjector
 
 /**
  * The container activity for tests using FragmentDaggerTest
+ * Always add this to manifest. (Since Robolectric 4.2)
  */
 class FragmentDaggerTestActivity : FragmentActivity(), HasSupportFragmentInjector {
 

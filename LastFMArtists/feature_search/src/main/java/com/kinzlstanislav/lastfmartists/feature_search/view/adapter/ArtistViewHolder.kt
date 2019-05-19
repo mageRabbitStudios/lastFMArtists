@@ -22,7 +22,7 @@ class ArtistViewHolder(
         item_artist_name.text = artist.name
         imageLoader.loadFromUrl(containerView.context, artist.imageUrl, item_img_artist)
         touchUpAction = {
-            val avatarBitmap = ArtistAvatarBitmap(item_img_artist.drawable.toBitmap())
+            val avatarBitmap = ArtistAvatarBitmap(item_img_artist.drawable?.toBitmap())
             itemOnClickListener.onArtistItemClicked(artist, avatarBitmap)
         }
     }

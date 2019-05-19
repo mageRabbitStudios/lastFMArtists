@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.kinzlstanislav.lastfmartists.architecture.core.model.Artist
@@ -57,7 +56,7 @@ class FragmentSearch : BaseFragment(), ArtistItemClickListener {
 
     override fun onFragmentCreated() {
         observe(viewModel.searchState, ::handleState)
-        setUpToolbar()
+        animateToolbarTitle()
         if (savedView == null) {
             flipper.showView(search_screen_welcome)
             list.adapter = artistsAdapter
@@ -67,7 +66,7 @@ class FragmentSearch : BaseFragment(), ArtistItemClickListener {
         }
     }
 
-    private fun setUpToolbar() {
+    private fun animateToolbarTitle() {
         search_toolbar_title.alpha = 0f
         search_toolbar_title.appear()
     }

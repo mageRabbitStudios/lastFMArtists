@@ -1,2 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.kinzlstanislav.lastfmartists.viewtesting"/>
+          package="com.kinzlstanislav.lastfmartists.viewtesting">
+    <application>
+        <activity android:name="com.kinzlstanislav.lastfmartists.viewtesting.FragmentDaggerTestActivity"/>
+    </application>
+</manifest>

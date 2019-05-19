@@ -12,5 +12,5 @@ data class ArtistInfo(
 
 @Parcelize
 data class ArtistAvatarBitmap(
-    val bitmap: Bitmap
+    val bitmap: Bitmap?
 ) : Parcelable
