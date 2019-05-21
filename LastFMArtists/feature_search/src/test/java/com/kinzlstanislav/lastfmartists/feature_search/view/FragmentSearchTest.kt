@@ -30,7 +30,7 @@ import org.junit.Test
 import java.nio.CharBuffer
 
 private val SOME_ARTISTS = listOf(
-    Artist(name = "Stanislav", id = "123", imageUrl = "nourl"),
+    Artist(name = "Mario Puzo", id = "123", imageUrl = "nourl"),
     Artist(name = "Godzilla", id = "123", imageUrl = "nourl"),
     Artist(name = "Thrall", id = "123", imageUrl = "nourl")
 )
@@ -79,7 +79,7 @@ class FragmentSearchTest : Robolectric4FragmentDaggerTest<FragmentSearch>() {
         whenStateIs(ArtistsLoaded(SOME_ARTISTS))
         thenFlipperForStatesShouldBeHidden()
         andListOfArtistsVisible()
-        assertArtistItem(0, "Stanislav")
+        assertArtistItem(0, "Mario Puzo")
         assertArtistItem(1, "Godzilla")
         assertArtistItem(2, "Thrall")
 

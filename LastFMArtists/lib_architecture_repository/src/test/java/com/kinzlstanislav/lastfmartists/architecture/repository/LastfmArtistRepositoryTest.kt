@@ -27,7 +27,6 @@ class LastfmArtistRepositoryTest {
     var artistsResponse = mockk<LastfmArtistSearchResultResponse>()
     var artistsResponseMapper = mockk<LastfmArtistResponseMapper>()
 
-
     var deferredArtistInfoResult = mockk<Deferred<LastfmArtistInfoResponse>>()
     var artistInfoResponse = mockk<LastfmArtistInfoResponse>()
     var artistInfoResponseMapper = mockk<LastfmArtistInfoResponseMapper>()

@@ -15,15 +15,15 @@ import org.junit.Test
 class SearchViewModelImplTest : BaseViewModelTest<FragmentSearchState>() {
 
     var mockReturnedArtistsResult = mockk<List<Artist>>()
-    var mockFetchLastfmArtistByNameUseCase
-            = mockk<FetchLastfmArtistsByNameUseCase>()
+    var mockFetchLastfmArtistByNameUseCase = mockk<FetchLastfmArtistsByNameUseCase>()
     var subject = SearchViewModelImpl(testAppCoroutineScope, testState, mockFetchLastfmArtistByNameUseCase)
 
-
-    @Test fun `fetchLastfmArtistsSuggestions()`() {
+    @Test
+    fun `fetchLastfmArtistsSuggestions()`() {
         assertStateWhenFetchLastfmArtistsSugg(
             Success(mockReturnedArtistsResult),
-            ArtistsLoaded(mockReturnedArtistsResult))
+            ArtistsLoaded(mockReturnedArtistsResult)
+        )
         assertStateWhenFetchLastfmArtistsSugg(NetworkError, FetchingArtistsNE)
         assertStateWhenFetchLastfmArtistsSugg(GenericError, FetchingArtistsGE)
         verify(exactly = 3) { testState.value = LoadingArtists }
@@ -36,7 +36,8 @@ class SearchViewModelImplTest : BaseViewModelTest<FragmentSearchState>() {
     }
 
     private fun givenFetchLastfmArtistByNameUseCaseReturns(result: Result) = coEvery {
-        mockFetchLastfmArtistByNameUseCase.execute(any(), any()) } returns result
+        mockFetchLastfmArtistByNameUseCase.execute(any(), any())
+    } returns result
 
     private fun whenFetchLastfmArtistsSuggestions() {
         subject.fetchLastfmArtistsSuggestions("asd", 123)

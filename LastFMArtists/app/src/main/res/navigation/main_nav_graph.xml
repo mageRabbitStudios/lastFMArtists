@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/main_nav_graph" app:startDestination="@id/fragmentSearch">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main_nav_graph"
+            app:startDestination="@id/fragmentSearch">
 
     <fragment android:id="@+id/fragmentSearch"
               android:name="com.kinzlstanislav.lastfmartists.feature_search.view.FragmentSearch"
@@ -12,7 +14,8 @@
                 app:enterAnim="@anim/fragment_slide_in_right"
                 app:exitAnim="@anim/fragment_slide_out_left"
                 app:popEnterAnim="@anim/fragment_slide_in_left"
-                app:destination="@id/fragmentArtistDetail" app:popExitAnim="@anim/fragment_slide_out_right"/>
+                app:destination="@id/fragmentArtistDetail"
+                app:popExitAnim="@anim/fragment_slide_out_right"/>
     </fragment>
 
     <fragment android:id="@+id/fragmentArtistDetail"

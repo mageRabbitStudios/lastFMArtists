@@ -13,7 +13,7 @@ class StateViewFlipper(
         visibility = View.GONE
     }
 
-    fun showView(view: View) {
+    fun show(view: View) {
         if (visibility == View.GONE) {
             visibility = View.VISIBLE
         }

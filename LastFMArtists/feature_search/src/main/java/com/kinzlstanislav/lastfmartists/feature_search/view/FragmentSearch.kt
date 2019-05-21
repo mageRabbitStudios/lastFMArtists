@@ -58,7 +58,7 @@ class FragmentSearch : BaseFragment(), ArtistItemClickListener {
         observe(viewModel.searchState, ::handleState)
         animateToolbarTitle()
         if (savedView == null) {
-            flipper.showView(search_screen_welcome)
+            flipper.show(search_screen_welcome)
             list.adapter = artistsAdapter
             artists_search.doOnSearch { fetchArtistsBySearchQuery() }
             onClickOn(genericErrButton) { fetchArtistsBySearchQuery() }
@@ -79,15 +79,15 @@ class FragmentSearch : BaseFragment(), ArtistItemClickListener {
         }
         is SearchViewModel.FragmentSearchState.LoadingArtists -> {
             list.hide()
-            flipper.showView(loader)
+            flipper.show(loader)
         }
         is SearchViewModel.FragmentSearchState.FetchingArtistsNE -> {
             list.hide()
-            flipper.showView(networkError)
+            flipper.show(networkError)
         }
         is SearchViewModel.FragmentSearchState.FetchingArtistsGE -> {
             list.hide()
-            flipper.showView(genericError)
+            flipper.show(genericError)
         }
     }
 
